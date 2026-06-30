@@ -2,10 +2,10 @@ import random
 CHOICES = ['rock', 'paper','scissors']
 def get_computer_choices():
     choice =random.choice(CHOICES)
-    
+    return choice
 def decide_winner(player , computer):
     if player == computer:
-        return "draw"
+        return 'draw'
     winning_moves ={
         "rock" : "scissors",
         "paper": "rock",
@@ -26,7 +26,7 @@ def playgame():
         if player not in CHOICES:
             return " invalid syntax please enter valid choices"
         
-        computer = get_computer_choices
+        computer = get_computer_choices()
         result  = decide_winner(player , computer)
            
         
@@ -39,7 +39,7 @@ def playgame():
         if result == computer:
             print(" computer win ") 
             
-        if result == draw :
+        if result == 'draw' :
             print(" match tied")
             
         play_again = input(" DO YOU WANT TO PLAY AGIAN : YES /NO").strip().lower()
